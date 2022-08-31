@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://benjaminpotter.github.io/baffqd/sitemap.xml
+Sitemap: https://www.baffqd.com/sitemap.xml
