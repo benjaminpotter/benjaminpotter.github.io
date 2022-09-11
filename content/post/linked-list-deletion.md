@@ -20,6 +20,15 @@ The ```next``` attribute is a pointer that refers to the next node in the list. 
 struct node* head;
 ```
 
+We end up with a structure that looks something like this,
+
+|      | head   | node 2 | ... | node n   | ... | node 100 |
+| ---- | ------ | ------ | --- | -------- | --- | -------- |
+| data | -1     |  3     |     | 10       |     | 4        |
+| next | node 2 | node 3 |     | node n+1 |     | NULL     |
+
+Each column represents a single node. The first column is the head of the list. From the head we can get to all ```data``` by traversing each node's next pointer.
+
 # Adding elements to the list.
 One of the benefits of a linked list over an array is we can add elements on-the-fly without reallocating a new memory block.
 
