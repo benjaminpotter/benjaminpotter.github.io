@@ -1,0 +1,170 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Linked List Deletion - Ben Potter</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Ben Potter"><meta name=description content="What is a linked list? A linked list is similar to an array but stores information a bit differently in memory. A linked list is a collection of nodes that contain two things:
+1 2 3 4 struct node { int data; struct node* next; } The next attribute is a pointer that refers to the next node in the list. This way we can traverse a linked list by using the next element of each node."><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.102.3 with theme even"><link rel=canonical href=https://www.baffqd.com/post/linked-list-deletion/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Linked List Deletion"><meta property="og:description" content="What is a linked list? A linked list is similar to an array but stores information a bit differently in memory. A linked list is a collection of nodes that contain two things:
+1 2 3 4 struct node { int data; struct node* next; } The next attribute is a pointer that refers to the next node in the list. This way we can traverse a linked list by using the next element of each node."><meta property="og:type" content="article"><meta property="og:url" content="https://www.baffqd.com/post/linked-list-deletion/"><meta property="article:section" content="post"><meta property="article:published_time" content="2022-09-11T11:14:04-04:00"><meta property="article:modified_time" content="2022-09-11T11:14:04-04:00"><meta itemprop=name content="Linked List Deletion"><meta itemprop=description content="What is a linked list? A linked list is similar to an array but stores information a bit differently in memory. A linked list is a collection of nodes that contain two things:
+1 2 3 4 struct node { int data; struct node* next; } The next attribute is a pointer that refers to the next node in the list. This way we can traverse a linked list by using the next element of each node."><meta itemprop=datePublished content="2022-09-11T11:14:04-04:00"><meta itemprop=dateModified content="2022-09-11T11:14:04-04:00"><meta itemprop=wordCount content="678"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Linked List Deletion"><meta name=twitter:description content="What is a linked list? A linked list is similar to an array but stores information a bit differently in memory. A linked list is a collection of nodes that contain two things:
+1 2 3 4 struct node { int data; struct node* next; } The next attribute is a pointer that refers to the next node in the list. This way we can traverse a linked list by using the next element of each node."><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Ben Potter</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Ben Potter</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Linked List Deletion</h1><div class=post-meta><span class=post-time>2022-09-11</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#what-is-a-linked-list>What is a linked list?</a></li><li><a href=#adding-elements-to-the-list>Adding elements to the list.</a></li><li><a href=#deleting-elements-from-the-list>Deleting elements from the list.</a></li></ul></nav></div></div><div class=post-content><h1 id=what-is-a-linked-list>What is a linked list?</h1><p>A linked list is similar to an array but stores information a bit differently in memory. A linked list is a collection of nodes that contain two things:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>struct</span> <span class=n>node</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>data</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>struct</span> <span class=n>node</span><span class=o>*</span> <span class=n>next</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>The <code>next</code> attribute is a pointer that refers to the next node in the list. This way we can traverse a linked list by using the next element of each node. All we need to store is the first node.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>struct</span> <span class=n>node</span><span class=o>*</span> <span class=n>head</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=adding-elements-to-the-list>Adding elements to the list.</h1><p>One of the benefits of a linked list over an array is we can add elements on-the-fly without reallocating a new memory block.</p><p>All we have to do is create a new node, give it some data, and hook up the previous tail of the list&rsquo;s next pointer to this new node.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>void</span> <span class=nf>append</span><span class=p>(</span><span class=kt>int</span> <span class=n>data</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// create new node
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>struct</span> <span class=n>node</span><span class=o>*</span> <span class=n>newNode</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>newNode</span><span class=o>-&gt;</span><span class=n>data</span> <span class=o>=</span> <span class=n>data</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// special case where the list is empty
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span> <span class=p>(</span><span class=n>head</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>head</span> <span class=o>=</span> <span class=n>newNode</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// find tail
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>struct</span> <span class=n>node</span><span class=o>*</span> <span class=n>tail</span> <span class=o>=</span> <span class=n>head</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span> <span class=p>(</span><span class=n>tail</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>!=</span> <span class=nb>NULL</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>tail</span> <span class=o>=</span> <span class=n>tail</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// &#34;link&#34; node into the list
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>tail</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=n>newNode</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=deleting-elements-from-the-list>Deleting elements from the list.</h1><p>Deleting elements is a bit more challenging. Especially if we allow deletions at any index in the list. To delete, we have to do a bit of stitching, disconnecting and reconnecting some next pointers. An example list might look like this,</p><blockquote><p>[-1] -> [3] -> [10]</p></blockquote><p>To delete from this list I might create a function like this,</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>void</span> <span class=nf>remove</span><span class=p>(</span><span class=kt>int</span> <span class=n>data</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// do the removal
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>This function will delete the first instance it finds of <code>data</code> in the list. For example, if we call <code>remove(3);</code> this list should look like,</p><blockquote><p>[-1] -> [10]</p></blockquote><p>So whats required to delete a node? Take a second and think about it.</p><p><em>thinking</em></p><p>First we have to find the element we want to remove. If no element matches <code>data</code> then we leave the list as is.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>void</span> <span class=nf>remove</span><span class=p>(</span><span class=kt>int</span> <span class=n>data</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=c1>// the list is empty, nothing to delete
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span><span class=p>(</span><span class=n>head</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// find element that matches data
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>struct</span> <span class=n>node</span><span class=o>*</span> <span class=n>target</span> <span class=o>=</span> <span class=n>head</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span> <span class=p>(</span><span class=n>target</span><span class=o>-&gt;</span><span class=n>data</span> <span class=o>!=</span> <span class=n>data</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>target</span> <span class=o>=</span> <span class=n>target</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c1>// data does not match any element in list
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span> <span class=p>(</span><span class=n>target</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Okay, so we&rsquo;ve written an algorithm to find an element that matches <code>data</code>. If no match exists, we just return.</p><p>So how do we delete the <code>target</code> node now? Let&rsquo;s change the previous node&rsquo;s next pointer to hold target&rsquo;s next node.</p><p>Before</p><blockquote><p>&mldr; -> PREV -> TARGET -> NEXT -> &mldr;</p></blockquote><p>After</p><blockquote><p>&mldr; -> PREV -> NEXT &mldr;</p></blockquote><p>Now when we try to traverse the list, we will never get to target because no other node has it as their next pointer. Just to be clear, the target node still exists. It is just no longer &ldquo;linked&rdquo; into the list. We will have to worry about freeing its memory. Let&rsquo;s improve our code.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>void</span> <span class=nf>remove</span><span class=p>(</span><span class=kt>int</span> <span class=n>data</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=c1>// the list is empty, nothing to delete
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span><span class=p>(</span><span class=n>head</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// find element that matches data
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=c1>// also keep track of the previous node
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>struct</span> <span class=n>node</span><span class=o>*</span> <span class=n>prev</span> <span class=o>=</span> <span class=nb>NULL</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>struct</span> <span class=n>node</span><span class=o>*</span> <span class=n>target</span> <span class=o>=</span> <span class=n>head</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span> <span class=p>(</span><span class=n>target</span><span class=o>-&gt;</span><span class=n>data</span> <span class=o>!=</span> <span class=n>data</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>prev</span> <span class=o>=</span> <span class=n>target</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>target</span> <span class=o>=</span> <span class=n>target</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c1>// data does not match any element in list
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span> <span class=p>(</span><span class=n>target</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>target</span> <span class=o>==</span> <span class=n>head</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>head</span> <span class=o>=</span> <span class=n>target</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>prev</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=n>target</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>free</span><span class=p>(</span><span class=n>target</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Hopefully you better understand deleting from linked lists now!</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Ben Potter</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2022-09-11</span></p></div><footer class=post-footer><nav class=post-nav></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:20bwp@queensu.ca class="iconfont icon-email" title=email></a>
+<a href=https:/www.github.com/benjaminpotter class="iconfont icon-github" title=github></a>
+<a href=https://www.baffqd.com/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2022<span class=heart><i class="iconfont icon-heart"></i></span><span>Ben Potter</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>
