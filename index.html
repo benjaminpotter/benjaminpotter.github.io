@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Ben Potter</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <script language="JavaScript">
+        var attribute_count = 20;
+        var attributes = new Array(attribute_count);
+
+        attributes[0] = "<b>favourite language</b> <code>c</code>";
+        attributes[1] = "<b>favourite ascii char</b> 0x78";
+        attributes[2] = "<b>alignment</b> chaotic good";
+        attributes[3] = "<b>favourite colour</b> <code>#964B00</code>";
+        attributes[4] = "<b>favourite set</b> &Nu;";
+        attributes[5] = "<b>favourite binary operator</b> &oplus;";
+        attributes[6] = "<b>favourite waveform</b> square";
+        attributes[7] = "<b>favourite editor</b> vim";
+        attributes[8] = "<b>favourite pc game</b> cities: skylines";
+        attributes[9] = "<b>favourite playstation game</b> overcooked";
+        attributes[10] = "<b>eye colour</b> blue";
+        attributes[11] = "<b>height</b> 5' 10\"";
+        attributes[12] = "<b>favourite book genre</b> historical fiction";
+        attributes[13] = "<b>favourite salad</b> wedge";
+        attributes[14] = "<b>favourite set</b> &Nu;";
+        attributes[15] = "<b>favourite circuit element</b> resistor";
+        attributes[16] = "<b>favourite endianness</b> big";
+        attributes[17] = "<b>favourite editor</b> vim";
+        attributes[18] = "<b>favourite suit</b> &spades;";
+        attributes[19] = "<b>middle initial</b> w";
+
+        function get_attribute() {
+            let idx = Math.floor(Math.random() * attribute_count);
+            return attributes[idx];
+        }
+    </script>
+</head>
+
+<body bgcolor="#2B4060">
+    <table class="root" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+            <!-- TOP -->
+            <tr height="51">
+                <td></td>
+            </tr>
+
+            <!-- BODY -->
+            <tr bgcolor="#FFFFFF">
+                <td>
+                    <table class="content-table bordered" cellpadding="0" cellspacing="0">
+                        <colgroup>
+                            <col>
+                            <col>
+                        </colgroup>
+
+                        <tbody>
+                            <tr>
+                                <!-- LEFT SIDE -->
+                                <td valign="top">
+                                    <table border="0" width="200" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td><img class="bordered" width="200" height="250" src="images/profile.jpg"></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top">
+                                                <ul class="navlist">
+                                                    <li><a href="pages/papers.html" class="navlistelement">papers</a></li>
+                                                    <li><a href="pages/blog.html" class="navlistelement">weblog</a></li>
+                                                    <li><a href="https://github.com/benjaminpotter" class="navlistelement">code</a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+
+                                <!-- RIGHT SIDE -->
+                                <td valign="top">
+                                    <table border="0" width="300" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td valign="top">
+                                                <h1>Hello!</h1>
+                                                <p><b>Ben Potter</b> welcomes you to the internet.</h3>
+                                                <p>
+                                                    BASc candidate. <br>
+                                                    <b>email</b> ben.potter@queensu.ca <br>
+                                                    <b>phone</b> let's start with email <br>
+                                                    <script language="JavaScript"> document.write(get_attribute());</script>
+                                                    <noscript><b>thing disabled</b> javascript</noscript>
+                                                    <br>
+                                                    <div class="announcement">
+                                                        Your prestigious university or an irrationally
+                                                        exuberant venture capitalist you know is so totally going to hire me
+                                                        when I graduate this year, right?
+                                                    </div>
+                                                </p>
+
+                                                <p class="about">
+                                                    I love computers: big and small, fast and slow, powerful and puny. I love them so
+                                                    much, I am an undergraduate computer engineer. I get to spend everyday 
+                                                    learning more and more about my favourite thing. I also work at the 
+                                                    <a href="https://www.rmc-cmr.ca/en">Royal Military College</a> of Canada, as a student 
+                                                    researcher. My work is focused on developing celestial navigation tech. Some of my code
+                                                    is <a href="https://github.com/benjaminpotter/compyss">available</a> online, but some 
+                                                    of it is secret.
+                                                </p>
+
+                                                <p class="about">
+                                                    I have a <b>bunch</b> of fun projects I've put together over the years.
+                                                    They do not follow a theme, except for the fact they use computers. Most of
+                                                    the projects that involve programming live on my <a href="https://github.com/benjaminpotter">GitHub</a>
+                                                    page. Otherwise, I've hopefully posted something interesting on my 
+                                                    <a href="pages/blog.html">weblog</a> about it.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <!-- BOTTOM -->
+            <tr height="51">
+                <td valign="top">
+                    <font color="#5680bf">
+                    Design was heavily inspired by <a style="color: inherit; text-decoration: none;" href="http://tom7.org">Dr. Tom Murphy</a>.
+                    </font>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
