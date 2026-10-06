@@ -1,4 +1,7 @@
 +++
+paginate_by = 3
+sort_by = "date"
+template = "index.html"
 +++
 
 <img src="profile.jpg" style = "float: left; margin: 1rem 1rem 1rem 0; max-width: 300px;"/>
