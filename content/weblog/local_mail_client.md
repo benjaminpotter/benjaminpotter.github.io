@@ -1,9 +1,9 @@
 ---
 title: "Linux Email Setup"
 date: 2026-09-28
-tags: [linux, arch, vim, email]
+tags: [linux, arch, vim, email, docs]
 draft: false
-description: ""
+description: "Documentation on how I setup my local mail client with Proton on Linux."
 ---
 
 The following is documentation (mostly for myself) about how I configure my local mail setup.
