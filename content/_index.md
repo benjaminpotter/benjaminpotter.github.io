@@ -1,13 +1,12 @@
 +++   
-title = "Ben Potter"
-description = "Computer engineering master's student researching bio-inspired navigation and future robotic systems."
 template = "home.html"
 +++
 
-<img src="profile.jpg" style = "float: left; margin: 1rem 1rem 1rem 0; max-width: 300px;"/>
+<img src="profile.jpg" class="profile-img"/>
 
-Ben Potter is a Master's student in Computer Engineering at Queen's University researching bio-inspired polarization compass systems.
-His work on insect-inspired navigation has led to multiple publications, including a journal paper in IEEE Access.
-Ben combines expertise in computer vision, embedded systems, and hardware development to advance autonomous navigation technologies.
-He previously completed his undergraduate degree as a Dean's Scholar and served as Chair of the IEEE Kingston Section Student Branch.
+Ben Potter is a computer engineer focused on alternative sensing methods, autonomous navigation, and robotic control. 
+He recently completed his Master’s degree in Computer Engineering at Queen’s University, where his research explored insect-inspired navigation systems for future mobile robots. 
+His work combines computer vision and adaptive sensor integration to improve standard state estimation approaches.
+He has contributed to multiple peer-reviewed publications over his graduate studies.
+He is interested in building robust sensing and autonomy systems that help robots operate more effectively in real-world environments.
 

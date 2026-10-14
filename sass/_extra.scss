@@ -1,3 +1,33 @@
 /******************************************************************************
  *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
  *****************************************************************************/
+
+.landing {
+  display: block;
+  margin-top: 2rem;
+}
+
+.landing::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.profile-img {
+  float: left;
+  max-width: 300px;
+  width: 35%;
+  height: auto;
+  margin: 0 1rem 1rem 0;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .profile-img {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 1rem;
+  }
+}
