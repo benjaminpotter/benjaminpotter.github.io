@@ -54,20 +54,20 @@ error_on_missing_language = true
 style = "class"
 
 # Any Extra language you do not use, delete or comment out the extra language sections:
-#[languages.fr]
-#title = "Abridge"
-#description = "Abridge est un thème Zola rapide et léger utilisant le html sémantique, le CSS abridge.css class-light et aucun JS obligatoire."
-#generate_feeds = true
-#build_search_index = true
-#search.include_title = true # include title of page/section in index
-#search.include_description = true # include description of page/section in index
-#search.include_content = true # include rendered content of page/section in index
-## search.truncate_content_length = 100 # Truncate at nth character. May be useful if index is getting too large.
-#taxonomies = [
-##    {name = "categories", feed = true},
-#    {name = "tags", feed = true},
-#]
-#
+[languages.fr]
+title = "Ben Potter"
+description = "Site Web personnel pour Ben Potter: maîtrise en génie informatique axé sur l'avenir de la robotique."
+generate_feeds = true
+build_search_index = true
+search.include_title = true # include title of page/section in index
+search.include_description = true # include description of page/section in index
+search.include_content = true # include rendered content of page/section in index
+# search.truncate_content_length = 100 # Truncate at nth character. May be useful if index is getting too large.
+taxonomies = [
+#    {name = "categories", feed = true},
+    {name = "tags", feed = true},
+]
+
 #[languages.es]
 #title = "Abridge"
 #description = "Abridge es un tema de Zola rápido y liviano que utiliza HTML semántico, CSS ligero de clase abridge.css y JS no obligatorio."
@@ -105,17 +105,19 @@ style = "class"
 ###############################################################################
 
 menu = [
-#    {url = "blog", name = "Blog", slash = true, blank = false, size="s110"},
+    {url = "blog", name = "Blog", slash = true, blank = false, size="s110"},
+    {url = "papers", name = "Papers", slash = true, blank = false, size="s110"},
+    {url = "cv.pdf", name = "CV", slash = false, blank = true, size="s110"},
 #    {url = "about", name = "About", slash = true, blank = false, size="s110"},
-    {url = "archive", name = "Posts", slash = true, blank = false, size="s110"},
+#    {url = "archive", name = "Posts", slash = true, blank = false, size="s110"},
 #    {url = "categories", name = "Categories", slash = true, blank = false, size="s110"},
     {url = "tags", name = "Tags", slash = true, blank = false, size="s110"},
 ]
 menu_footer = [
-    {url = "about", name = "About", slash = true, blank = false, size="s90"},
-    {url = "contact", name = "Contact", slash = true, blank = false, size="s90"},
-    {url = "privacy", name = "Privacy", slash = true, blank = false, size="s90"},
-    {url = "sitemap.xml", name = "Sitemap", slash = false, blank = true, size="s90"},
+    # {url = "about", name = "About", slash = true, blank = false, size="s90"},
+    # {url = "contact", name = "Contact", slash = true, blank = false, size="s90"},
+    # {url = "privacy", name = "Privacy", slash = true, blank = false, size="s90"},
+    # {url = "sitemap.xml", name = "Sitemap", slash = false, blank = true, size="s90"},
 ]
 
 toc = true

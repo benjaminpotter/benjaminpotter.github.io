@@ -1,4 +1,9 @@
 +++
+title = "Papers"
+description = ""
+draft = false
+path = "papers"
+template = "pages.html"
 +++
 
 Under construction!

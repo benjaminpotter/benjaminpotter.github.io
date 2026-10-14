@@ -1,10 +1,21 @@
----
-title: "DisplayLink on Linux: Say Goodbye to Hardware Acceleration"
-date: 2026-03-25
-tags: [linux, arch, thinkpad, displaylink, sway, wayland, docking-station]
-draft: false
-description: "Running external displays over my ThinkPad Hybrid USB-C Dock pegged my CPU at 80%. What I tried and where I am now."
----
++++
+date = 2026-03-25
+draft = false
+title = "Troubleshooting DisplayLink on Linux"
+description = "I found that running external displays over my ThinkPad Hybrid USB-C Dock caused a significant load on my CPU (peak around 80%). I document the process of getting DisplayLink working with my laptop."
+
+[extra]
+keywords = ""
+series = "Linux"
+toc = true
+
+[taxonomies]
+tags = [
+    "Linux",
+    "Documentation",
+    "Markdown",
+]
++++
 
 I got a **Lenovo ThinkPad Hybrid USB-C with USB-A Dock** and plugged it into my ThinkPad X1 running Arch Linux and Sway. 
 Two external monitors, keyboard, mouse, and fast charging.

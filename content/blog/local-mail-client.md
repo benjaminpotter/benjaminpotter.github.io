@@ -1,10 +1,21 @@
----
-title: "Linux Email Setup"
-date: 2026-09-28
-tags: [linux, arch, vim, email, docs]
-draft: false
-description: "Documentation on how I setup my local mail client with Proton on Linux."
----
++++
+date = 2026-09-28
+draft = false
+title = "Linux Email Setup"
+description = "Documentation on how I setup my local mail client with Proton on Linux."
+
+[extra]
+keywords = ""
+series = "Linux"
+toc = true
+
+[taxonomies]
+tags = [
+    "Linux",
+    "Markdown",
+]
++++
+
 
 The following is documentation (mostly for myself) about how I configure my local mail setup.
 I want to sync my personal mail account hosted by Proton, to a terminal-first local interface.
