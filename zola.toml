@@ -106,7 +106,7 @@ taxonomies = [
 
 menu = [
     {url = "blog", name = "Blog", slash = true, blank = false, size="s110"},
-    {url = "papers", name = "Papers", slash = true, blank = false, size="s110"},
+    {url = "publications", name = "Publications", slash = true, blank = false, size="s110"},
     {url = "projects", name = "Projects", slash = true, blank = false, size="s110"},
     {url = "cv.pdf", name = "CV", slash = false, blank = true, size="s110"},
 #    {url = "about", name = "About", slash = true, blank = false, size="s110"},

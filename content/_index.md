@@ -10,3 +10,5 @@ His work combines computer vision and adaptive sensor integration to improve sta
 He has contributed to multiple peer-reviewed publications over his graduate studies.
 He is interested in building robust sensing and autonomy systems that help robots operate more effectively in real-world environments.
 
+
+

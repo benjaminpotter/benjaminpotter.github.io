@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+
+  {%- block page_header -%}
+    <h1>Publications</h1>
+  {%- endblock page_header %}
+  
+  {% set entries = load_data(path="static/publications.bib", format="bibtex") %}
+  
+  <ul class="publication-list">
+    {% for entry in entries.bibliographies %}
+      <li style="margin-bottom: 1.5rem;">
+        <!-- Title -->
+        <strong>{{ entry.tags.title | default(value="Untitled") }}</strong><br>
+        
+        <!-- Authors -->
+        {% if entry.tags.author %}
+          {{ entry.tags.author }}<br>
+        {% endif %}
+        
+        <!-- Venue (Journal or Booktitle) -->
+        <em>
+          {% if entry.tags.journal %}
+            {{ entry.tags.journal }}
+          {% elif entry.tags.booktitle %}
+            {{ entry.tags.booktitle }}
+          {% elif entry.tags.publisher %}
+            {{ entry.tags.publisher }}
+          {% endif %}
+        </em>
+        
+        <!-- Year -->
+        {% if entry.tags.year %}
+          ({{ entry.tags.year }})
+        {% endif %}
+        
+        <!-- Optional Links (DOI or direct URL) -->
+        {% if entry.tags.doi %}
+          <br><a href="https://doi.org/{{ entry.tags.doi }}">DOI: {{ entry.tags.doi }}</a>
+        {% elif entry.tags.url %}
+          <br><a href="{{ entry.tags.url }}">Link</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  
+</article>
+{% endblock content %}
